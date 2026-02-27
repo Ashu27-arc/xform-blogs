@@ -120,7 +120,7 @@ export default function EmbededForm() {
         <div className="text-2xl font-extrabold tracking-wide leading-tight">NEET - 2026</div>
         <div className="text-xl font-semibold leading-tight">Updates</div>
       </header>
-  
+
       <form onSubmit={onSubmit} className="space-y-4">
         <div className="relative">
           <span className="pointer-events-none absolute left-4 top-1/2 -translate-y-1/2 text-slate-400">
@@ -135,7 +135,7 @@ export default function EmbededForm() {
             className="h-12 w-full rounded-xl bg-white pl-12 pr-4 text-slate-900 placeholder:text-slate-400 outline-none ring-1 ring-white/40 focus:ring-2 focus:ring-white/80"
           />
         </div>
-  
+
         <div className="relative">
           <span className="pointer-events-none absolute left-4 top-1/2 -translate-y-1/2 text-slate-400">
             <IconMail className="h-6 w-6" />
@@ -150,7 +150,7 @@ export default function EmbededForm() {
             className="h-12 w-full rounded-xl bg-white pl-12 pr-4 text-slate-900 placeholder:text-slate-400 outline-none ring-1 ring-white/40 focus:ring-2 focus:ring-white/80"
           />
         </div>
-  
+
         <div className="relative">
           <span className="pointer-events-none absolute left-4 top-1/2 -translate-y-1/2 text-slate-400">
             <IconPhone className="h-6 w-6" />
@@ -166,7 +166,7 @@ export default function EmbededForm() {
             className="h-12 w-full rounded-xl bg-white pl-12 pr-4 text-slate-900 placeholder:text-slate-400 outline-none ring-1 ring-white/40 focus:ring-2 focus:ring-white/80"
           />
         </div>
-  
+
         <div className="relative">
           <span className="pointer-events-none absolute left-4 top-1/2 -translate-y-1/2 text-slate-400">
             <IconBook className="h-6 w-6" />
@@ -188,7 +188,7 @@ export default function EmbededForm() {
             <IconChevronDown className="h-6 w-6" />
           </span>
         </div>
-  
+
         <label
           htmlFor={`${baseId}-consent`}
           className="flex items-start gap-3 text-left text-sm leading-snug text-white/95"
@@ -211,7 +211,7 @@ export default function EmbededForm() {
             </a>
           </span>
         </label>
-  
+
         <button
           type="submit"
           disabled={isSubmitting}
@@ -219,16 +219,16 @@ export default function EmbededForm() {
         >
           {isSubmitting ? 'PLEASE WAIT…' : 'GET STARTED FOR FREE'}
         </button>
-  
+
         {submitError ? (
           <p className="text-sm text-rose-100/95" role="alert">
             {submitError}
           </p>
         ) : null}
-  
+
         {isSubmitted ? (
           <p className="text-sm text-emerald-100/95" role="status">
-            Submitted successfully. We'll contact you soon.
+            Submitted successfully. We’ll contact you soon.
           </p>
         ) : null}
       </form>
