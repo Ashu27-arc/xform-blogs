@@ -114,14 +114,14 @@ export default function EmbededForm() {
   }
 
   return (
-    <section className="w-full max-w-[420px] rounded-2xl bg-[#0B77B6] px-5 py-6 text-white shadow-lg overflow-hidden">
-      <header className="mb-5 text-center">
+    <section className="w-full max-w-[420px] rounded-2xl bg-[#0B77B6] px-5 py-4 text-white shadow-lg overflow-hidden">
+      <header className="mb-3 text-center">
         <div className="text-xl font-semibold leading-tight">Get</div>
         <div className="text-2xl font-extrabold tracking-wide leading-tight">NEET - 2026</div>
         <div className="text-xl font-semibold leading-tight">Updates</div>
       </header>
 
-      <form onSubmit={onSubmit} className="space-y-4">
+      <form onSubmit={onSubmit} className="space-y-3">
         <div className="relative">
           <span className="pointer-events-none absolute left-4 top-1/2 -translate-y-1/2 text-slate-400">
             <IconUser className="h-6 w-6" />
@@ -215,7 +215,7 @@ export default function EmbededForm() {
         <button
           type="submit"
           disabled={isSubmitting}
-          className="mt-2 h-12 w-full rounded-xl bg-[#4AD7C3] font-extrabold tracking-wide text-white shadow-sm transition active:scale-[0.99] disabled:cursor-not-allowed disabled:opacity-70"
+          className="mt-1 h-11 w-full rounded-xl bg-[#4AD7C3] font-extrabold tracking-wide text-white shadow-sm transition active:scale-[0.99] disabled:cursor-not-allowed disabled:opacity-70"
         >
           {isSubmitting ? 'PLEASE WAIT…' : 'GET STARTED FOR FREE'}
         </button>
