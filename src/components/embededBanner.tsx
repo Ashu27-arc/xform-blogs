@@ -16,7 +16,7 @@ export default function EmbededBanner({
 }: EmbededBannerProps) {
   return (
     <section className={className}>
-      <div className="overflow-hidden rounded-2xl bg-white shadow-lg">
+      <div className="rounded-2xl bg-white shadow-lg">
         <img src={src} alt={alt} className="h-auto w-full object-cover" loading="lazy" />
       </div>
       {children}

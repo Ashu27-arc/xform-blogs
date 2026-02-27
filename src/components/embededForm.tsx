@@ -114,7 +114,7 @@ export default function EmbededForm() {
   }
 
   return (
-    <section className="w-full max-w-[420px] rounded-2xl bg-[#0B77B6] px-5 py-6 text-white shadow-lg">
+    <section className="w-full max-w-[420px] rounded-2xl bg-[#0B77B6] px-5 py-6 text-white shadow-lg overflow-visible">
       <header className="mb-5 text-center">
         <div className="text-xl font-semibold leading-tight">Get</div>
         <div className="text-2xl font-extrabold tracking-wide leading-tight">NEET - 2026</div>
