@@ -21,7 +21,7 @@ export default function App() {
           element={
             <div className="mx-auto flex max-w-5xl justify-center">
               <EmbededBanner
-                src="/vite.svg"
+                src="/MBBS-IN-INDIA-BANNER-26.webp"
                 alt="Radical banner"
                 className="w-full max-w-[420px]"
               />
