@@ -1,6 +1,7 @@
 import { Navigate, Route, Routes } from 'react-router-dom'
 import './App.css'
 import EmbededForm from './components/embededForm'
+import EmbededBanner from './components/embededBanner'
 
 export default function App() {
   return (
@@ -12,6 +13,18 @@ export default function App() {
           element={
             <div className="mx-auto flex max-w-5xl justify-center">
               <EmbededForm />
+            </div>
+          }
+        />
+        <Route
+          path="/banner"
+          element={
+            <div className="mx-auto flex max-w-5xl justify-center">
+              <EmbededBanner
+                src="/vite.svg"
+                alt="Radical banner"
+                className="w-full max-w-[420px]"
+              />
             </div>
           }
         />
