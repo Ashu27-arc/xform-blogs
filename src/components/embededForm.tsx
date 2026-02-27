@@ -1,4 +1,5 @@
-import React, { useId, useState } from 'react'
+import React, { useId, useMemo, useState } from 'react'
+import { submitLead } from '../services/api'
 
 type FormValues = {
   name: string
@@ -58,6 +59,7 @@ const IconChevronDown = (props: React.SVGProps<SVGSVGElement>) => (
 
 export default function EmbededForm() {
   const baseId = useId()
+  const page = useMemo(() => (typeof window !== 'undefined' ? window.location.href : ''), [])
   const [values, setValues] = useState<FormValues>({
     name: '',
     email: '',
@@ -66,6 +68,8 @@ export default function EmbededForm() {
     consent: false,
   })
   const [isSubmitting, setIsSubmitting] = useState(false)
+  const [submitError, setSubmitError] = useState<string | null>(null)
+  const [isSubmitted, setIsSubmitted] = useState(false)
 
   const onChange =
     <K extends keyof FormValues>(key: K) =>
@@ -80,9 +84,30 @@ export default function EmbededForm() {
   const onSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
     setIsSubmitting(true)
+    setSubmitError(null)
+    setIsSubmitted(false)
     try {
-      // Hook your API call here if needed.
-      await new Promise((r) => setTimeout(r, 350))
+      await submitLead({
+        name: values.name || undefined,
+        email: values.email || undefined,
+        phone: values.phone,
+        course: values.course || undefined,
+        consent: values.consent,
+        source: 'xform-blogs',
+        page,
+      })
+
+      setIsSubmitted(true)
+      setValues({
+        name: '',
+        email: '',
+        phone: '',
+        course: '',
+        consent: false,
+      })
+    } catch (err) {
+      const message = err instanceof Error ? err.message : 'Failed to submit. Please try again.'
+      setSubmitError(message)
     } finally {
       setIsSubmitting(false)
     }
@@ -194,6 +219,18 @@ export default function EmbededForm() {
         >
           {isSubmitting ? 'PLEASE WAIT…' : 'GET STARTED FOR FREE'}
         </button>
+
+        {submitError ? (
+          <p className="text-sm text-rose-100/95" role="alert">
+            {submitError}
+          </p>
+        ) : null}
+
+        {isSubmitted ? (
+          <p className="text-sm text-emerald-100/95" role="status">
+            Submitted successfully. We’ll contact you soon.
+          </p>
+        ) : null}
       </form>
     </section>
   )
