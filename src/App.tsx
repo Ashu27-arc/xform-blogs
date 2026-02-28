@@ -2,6 +2,7 @@ import { Navigate, Route, Routes } from 'react-router-dom'
 import './App.css'
 import EmbededForm from './components/embededForm'
 import EmbededBanner from './components/embededBanner'
+import EmbededeFAQs from './components/embededeFAQs'
 
 export default function App() {
   return (
@@ -25,6 +26,14 @@ export default function App() {
                 alt="Radical banner"
                 className="w-full max-w-[420px]"
               />
+            </div>
+          }
+        />
+        <Route
+          path="/faqs"
+          element={
+            <div className="mx-auto flex max-w-5xl justify-center overflow-hidden">
+              <EmbededeFAQs className="w-full max-w-[520px]" />
             </div>
           }
         />

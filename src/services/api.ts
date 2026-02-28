@@ -44,6 +44,21 @@ function errorMessage(err: unknown) {
   return 'Request failed'
 }
 
+export interface BlogFaq {
+  question: string
+  answer: string
+}
+
+export async function fetchBlogFaqs(slug: string): Promise<BlogFaq[]> {
+  try {
+    const res = await api.get<{ faqs?: BlogFaq[] }>(`/api/blogs/slug/${encodeURIComponent(slug)}`)
+    const faqs = res.data?.faqs
+    return Array.isArray(faqs) ? faqs : []
+  } catch {
+    return []
+  }
+}
+
 export async function submitLead(payload: LeadPayload) {
   try {
     const res = await api.post<LeadApiResponse>('/api/leads', payload)
