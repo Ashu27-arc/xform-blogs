@@ -7,6 +7,12 @@ type EmbededeFAQsProps = {
   className?: string
 }
 
+/** Process FAQ answer HTML so links break out of iframe (target="_top") */
+const processFaqAnswer = (html: string) => {
+  if (!html) return ''
+  return html.replace(/<a\s+/gi, '<a target="_top" rel="noopener noreferrer" ')
+}
+
 export default function EmbededeFAQs({ slug: propSlug, className }: EmbededeFAQsProps) {
   const [faqs, setFaqs] = useState<BlogFaq[]>([])
   const [loading, setLoading] = useState(true)
@@ -51,29 +57,14 @@ export default function EmbededeFAQs({ slug: propSlug, className }: EmbededeFAQs
       </h2>
       <div className="divide-y divide-gray-100">
         {faqs.map((faq, idx) => (
-          <details key={idx} className="group">
-            <summary className="px-4 py-3 cursor-pointer list-none flex justify-between items-center hover:bg-gray-50 transition-colors">
-              <span className="font-medium text-gray-800 pr-3 text-sm">{faq.question}</span>
-              <span className="flex-shrink-0 w-5 h-5 flex items-center justify-center text-gray-500 group-open:rotate-180 transition-transform">
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  strokeWidth={2}
-                  stroke="currentColor"
-                  className="w-4 h-4"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    d="M19.5 8.25l-7.5 7.5-7.5-7.5"
-                  />
-                </svg>
-              </span>
+          <details key={idx} className="group [&_summary::-webkit-details-marker]:hidden [&_summary::marker]:hidden">
+            <summary className="px-4 py-3 cursor-pointer list-none hover:bg-gray-50 transition-colors">
+              <span className="font-medium text-gray-800 text-sm">{faq.question}</span>
             </summary>
-            <div className="px-4 pb-3 pt-0 text-gray-600 text-sm leading-relaxed">
-              {faq.answer}
-            </div>
+            <div
+              className="px-4 pb-3 pt-0 text-gray-600 text-sm leading-relaxed [&_a]:text-blue-600 [&_a]:underline hover:[&_a]:text-blue-800"
+              dangerouslySetInnerHTML={{ __html: processFaqAnswer(faq.answer) }}
+            />
           </details>
         ))}
       </div>
