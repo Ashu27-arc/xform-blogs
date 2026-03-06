@@ -1,4 +1,4 @@
-import type { ReactNode } from 'react'
+import type { MouseEvent, ReactNode } from 'react'
 
 const DEFAULT_LINK = 'https://wa.me/919797972465'
 
@@ -25,10 +25,21 @@ export default function EmbededBanner({
     </div>
   )
 
+  const handleClick = (e: MouseEvent<HTMLAnchorElement>) => {
+    if (href && typeof window !== 'undefined') {
+      // When in iframe, ensure link opens (some browsers block default anchor behavior)
+      const inIframe = window.self !== window.top
+      if (inIframe) {
+        e.preventDefault()
+        window.top!.open(href, '_blank', 'noopener,noreferrer')
+      }
+    }
+  }
+
   return (
     <section className={`${className} overflow-hidden`}>
       {href ? (
-        <a href={href} target="_blank" rel="noopener noreferrer" className="block">
+        <a href={href} target="_blank" rel="noopener noreferrer" className="block cursor-pointer" onClick={handleClick}>
           {content}
         </a>
       ) : (
