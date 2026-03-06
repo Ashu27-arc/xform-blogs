@@ -8,7 +8,6 @@ import EmbededBanner3 from './components/embededBanner-3'
 import EmbededBanner4 from './components/embededBanner-4'
 import EmbededBanner5 from './components/embededBanner-5'
 import EmbededBanner6 from './components/embededBanner-6'
-import EmbededBanner7 from './components/embededBanner-7'
 import EmbededeFAQs from './components/embededeFAQs'
 
 export default function App() {
@@ -81,14 +80,6 @@ export default function App() {
           element={
             <div className="mx-auto flex max-w-5xl justify-center overflow-hidden">
               <EmbededBanner6 />
-            </div>
-          }
-        />
-        <Route
-          path="/banner-7"
-          element={
-            <div className="mx-auto flex max-w-5xl justify-center overflow-hidden">
-              <EmbededBanner7 />
             </div>
           }
         />
