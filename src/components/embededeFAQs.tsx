@@ -58,11 +58,14 @@ export default function EmbededeFAQs({ slug: propSlug, className }: EmbededeFAQs
       <div className="divide-y divide-gray-100">
         {faqs.map((faq, idx) => (
           <details key={idx} className="group [&_summary::-webkit-details-marker]:hidden [&_summary::marker]:hidden">
-            <summary className="px-4 py-3 cursor-pointer list-none hover:bg-gray-50 transition-colors">
-              <span className="font-medium text-gray-800 text-sm">{faq.question}</span>
+            <summary className="px-4 py-3 cursor-pointer list-none hover:bg-gray-50 transition-colors flex items-start">
+              <span className="w-6 h-6 flex items-center justify-center text-lg font-bold text-blue-600 mr-3 flex-shrink-0 transition-transform duration-300 group-open:rotate-45">
+                +
+              </span>
+              <span className="font-medium text-gray-800 text-sm flex-1">{faq.question}</span>
             </summary>
             <div
-              className="px-4 pb-3 pt-0 text-gray-600 text-sm leading-relaxed [&_a]:text-blue-600 [&_a]:underline hover:[&_a]:text-blue-800"
+              className="px-4 ml-9 pb-3 pt-0 text-gray-600 text-sm leading-relaxed [&_a]:text-blue-600 [&_a]:underline hover:[&_a]:text-blue-800"
               dangerouslySetInnerHTML={{ __html: processFaqAnswer(faq.answer) }}
             />
           </details>
