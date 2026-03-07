@@ -12,7 +12,7 @@ import EmbededeFAQs from './components/embededeFAQs'
 
 export default function App() {
   return (
-    <div className="w-full bg-slate-50 p-6 overflow-hidden">
+    <div className="w-full overflow-hidden">
       <Routes>
         <Route path="/" element={<Navigate to="/neet-updates" replace />} />
         <Route
