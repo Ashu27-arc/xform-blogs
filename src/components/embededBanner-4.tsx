@@ -3,7 +3,7 @@ import EmbededBanner from './embededBanner'
 export default function EmbededBanner4() {
   return (
     <EmbededBanner
-      src="/neet-bhaiya.webp"
+      src="/pg-counselling.webp"
       alt="Radical banner 4"
       className="w-full max-w-[420px]"
     />
