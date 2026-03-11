@@ -20,8 +20,8 @@ export default function EmbededBanner({
   children,
 }: EmbededBannerProps) {
   const content = (
-    <div className="rounded-2xl bg-white shadow-lg">
-      <img src={src} alt={alt} className="h-auto w-full object-cover" loading="lazy" />
+    <div className="bg-white m-0 p-0">
+      <img src={src} alt={alt} className="h-auto w-full object-cover m-0 p-0 block" loading="lazy" />
     </div>
   )
 
@@ -37,9 +37,9 @@ export default function EmbededBanner({
   }
 
   return (
-    <section className={`${className} overflow-hidden`}>
+    <section className={`${className} overflow-hidden m-0 p-0`}>
       {href ? (
-        <a href={href} target="_blank" rel="noopener noreferrer" className="block cursor-pointer" onClick={handleClick}>
+        <a href={href} target="_blank" rel="noopener noreferrer" className="block cursor-pointer m-0 p-0" onClick={handleClick}>
           {content}
         </a>
       ) : (

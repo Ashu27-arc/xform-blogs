@@ -5,7 +5,7 @@ export default function EmbededBanner1() {
     <EmbededBanner
       src="/Facebook-cover.png"
       alt="Radical banner 1"
-      className="w-full max-w-[600px]"
+      className="w-full max-w-[800px]"
     />
   )
 }

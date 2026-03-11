@@ -5,7 +5,7 @@ export default function EmbededBanner5() {
     <EmbededBanner
       src="/mbbs-bds-1.webp"
       alt="Radical banner 5"
-      className="w-full max-w-[600px]"
+      className="w-full max-w-[800px]"
     />
   )
 }

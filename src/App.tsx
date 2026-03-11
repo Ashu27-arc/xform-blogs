@@ -12,7 +12,7 @@ import EmbededeFAQs from './components/embededeFAQs'
 
 export default function App() {
   return (
-    <div className="w-full overflow-hidden">
+    <div className="w-full overflow-hidden p-0 m-0">
       <Routes>
         <Route path="/" element={<Navigate to="/neet-updates" replace />} />
         <Route
@@ -30,7 +30,7 @@ export default function App() {
               <EmbededBanner
                 src="/MBBS-IN-INDIA-BANNER-26.webp"
                 alt="Radical banner"
-                className="w-full max-w-[600px]"
+                className="w-full max-w-[800px]"
               />
             </div>
           }
