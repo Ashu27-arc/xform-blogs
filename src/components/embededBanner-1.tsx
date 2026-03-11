@@ -3,7 +3,7 @@ import EmbededBanner from './embededBanner'
 export default function EmbededBanner1() {
   return (
     <EmbededBanner
-      src="/Facebook-cover.png"
+      src="/study-abroad.webp"
       alt="Radical banner 1"
       className="w-full max-w-[800px]"
     />
