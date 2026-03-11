@@ -9,6 +9,7 @@ import EmbededBanner4 from './components/embededBanner-4.tsx'
 import EmbededBanner5 from './components/embededBanner-5.tsx'
 import EmbededBanner6 from './components/embededBanner-6.tsx'
 import EmbededeFAQs from './components/embededeFAQs.tsx'
+import EmbededWhatsapp from './components/embededWhatsapp.tsx'
 
 export default function App() {
   return (
@@ -88,6 +89,14 @@ export default function App() {
           element={
             <div className="mx-auto flex max-w-5xl justify-center overflow-hidden">
               <EmbededeFAQs className="w-full max-w-[520px]" />
+            </div>
+          }
+        />
+        <Route
+          path="/whatsapp"
+          element={
+            <div className="mx-auto flex max-w-5xl justify-center overflow-hidden">
+              <EmbededWhatsapp />
             </div>
           }
         />

@@ -21,7 +21,7 @@ export default function EmbededBanner({
 }: EmbededBannerProps) {
   const content = (
     <div className="bg-white m-0 p-0">
-      <img src={src} alt={alt} className="h-auto w-full object-cover m-0 p-0 block" loading="lazy" />
+      <img src={src} alt={alt} className="w-full h-auto block m-0 p-0" loading="lazy" />
     </div>
   )
 
