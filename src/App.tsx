@@ -30,7 +30,7 @@ export default function App() {
               <EmbededBanner
                 src="/MBBS-IN-INDIA-BANNER-26.webp"
                 alt="Radical banner"
-                className="w-full max-w-[420px]"
+                className="w-full max-w-[600px]"
               />
             </div>
           }

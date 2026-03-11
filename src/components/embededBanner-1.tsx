@@ -5,7 +5,7 @@ export default function EmbededBanner1() {
     <EmbededBanner
       src="/study-abroad.webp"
       alt="Radical banner 1"
-      className="w-full max-w-[420px]"
+      className="w-full max-w-[600px]"
     />
   )
 }

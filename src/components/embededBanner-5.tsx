@@ -5,7 +5,7 @@ export default function EmbededBanner5() {
     <EmbededBanner
       src="/neet-bhaiya.webp"
       alt="Radical banner 5"
-      className="w-full max-w-[420px]"
+      className="w-full max-w-[600px]"
     />
   )
 }

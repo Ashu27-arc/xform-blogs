@@ -5,7 +5,7 @@ export default function EmbededBanner2() {
     <EmbededBanner
       src="/md-ms-dnb.webp"
       alt="Radical banner 2"
-      className="w-full max-w-[420px]"
+      className="w-full max-w-[600px]"
     />
   )
 }
