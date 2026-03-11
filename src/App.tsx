@@ -1,14 +1,14 @@
 import { Navigate, Route, Routes } from 'react-router-dom'
 import './App.css'
-import EmbededForm from './components/embededForm'
-import EmbededBanner from './components/embededBanner'
-import EmbededBanner1 from './components/embededBanner-1'
-import EmbededBanner2 from './components/embededBanner-2'
-import EmbededBanner3 from './components/embededBanner-3'
-import EmbededBanner4 from './components/embededBanner-4'
-import EmbededBanner5 from './components/embededBanner-5'
-import EmbededBanner6 from './components/embededBanner-6'
-import EmbededeFAQs from './components/embededeFAQs'
+import EmbededForm from './components/embededForm.tsx'
+import EmbededBanner from './components/embededBanner.tsx'
+import EmbededBanner1 from './components/embededBanner-1.tsx'
+import EmbededBanner2 from './components/embededBanner-2.tsx'
+import EmbededBanner3 from './components/embededBanner-3.tsx'
+import EmbededBanner4 from './components/embededBanner-4.tsx'
+import EmbededBanner5 from './components/embededBanner-5.tsx'
+import EmbededBanner6 from './components/embededBanner-6.tsx'
+import EmbededeFAQs from './components/embededeFAQs.tsx'
 
 export default function App() {
   return (
