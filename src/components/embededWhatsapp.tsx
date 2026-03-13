@@ -23,7 +23,7 @@ export default function EmbededWhatsapp({
         className="block w-full transition-transform hover:scale-[1.01] active:scale-[0.99]"
       >
         <img 
-          src="/whatsapp-image.jpeg" 
+          src="/whatsapp-image.webp" 
           alt="Chat on WhatsApp" 
           className="w-full h-auto block rounded-xl shadow-md"
         />
