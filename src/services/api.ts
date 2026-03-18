@@ -10,16 +10,16 @@ export type LeadPayload = {
 
 type LeadApiResponse =
   | {
-      success: true
-      stored: boolean
-      message: string
-      id?: string
-    }
+    success: true
+    stored: boolean
+    message: string
+    id?: string
+  }
   | {
-      success: false
-      message: string
-      errors?: { field: string; message: string }[]
-    }
+    success: false
+    message: string
+    errors?: { field: string; message: string }[]
+  }
 
 import axios from 'axios'
 import type { AxiosError } from 'axios'
