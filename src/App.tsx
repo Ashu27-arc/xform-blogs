@@ -29,7 +29,7 @@ export default function App() {
           element={
             <div className="mx-auto flex max-w-5xl justify-center overflow-hidden">
               <EmbededBanner
-                src="/MBBS-IN-INDIA-BANNER-26.webp"
+                src="/mbbs-in-india.webp"
                 alt="Radical banner"
                 className="w-full max-w-[800px]"
               />
