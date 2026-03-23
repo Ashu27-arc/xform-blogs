@@ -23,7 +23,9 @@ export default function EmbededeFAQs({ slug: propSlug, className }: EmbededeFAQs
 
   useEffect(() => {
     if (!slug?.trim()) {
-      setLoading(false)
+      // Rule: avoid synchronous setState inside effect body.
+      // Here we mark loading as false on next microtask.
+      Promise.resolve().then(() => setLoading(false))
       return
     }
     fetchBlogFaqs(slug.trim())

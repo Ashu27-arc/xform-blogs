@@ -27,7 +27,8 @@ import type { AxiosError } from 'axios'
 const DEFAULT_API_BASE_URL = 'https://backend-radical.onrender.com'
 
 function getApiBaseUrl() {
-  const raw = (import.meta as any).env?.VITE_API_BASE_URL as string | undefined
+  const env = (import.meta as unknown as { env?: Record<string, unknown> }).env
+  const raw = env?.VITE_API_BASE_URL as string | undefined
   return (raw && raw.trim().length > 0 ? raw : DEFAULT_API_BASE_URL).replace(/\/$/, '')
 }
 
@@ -37,8 +38,9 @@ const api = axios.create({
 })
 
 function errorMessage(err: unknown) {
-  const ax = err as AxiosError<any>
-  const fromApi = ax?.response?.data?.message
+  const ax = err as AxiosError<unknown>
+  const responseData = ax?.response?.data as { message?: unknown } | undefined
+  const fromApi = responseData?.message
   if (typeof fromApi === 'string' && fromApi.trim()) return fromApi
   if (typeof ax?.message === 'string' && ax.message.trim()) return ax.message
   return 'Request failed'
